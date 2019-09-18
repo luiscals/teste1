@@ -9,28 +9,39 @@
 
 
 <ion-header>
-   <ion-navbar>
-     <ion-title> Oi
-
-     </ion-title>
+    <ion-navbar>
+        <ion-title>My Feed Reader</ion-title>
+        <ion-buttons end>
+           <button ion-button icon-only (click)="showFilters()">
+               <ion-icon name="funnel"></ion-icon>
+           </button>
+        </ion-buttons> 
     </ion-navbar>
-</ion-header>
+ </ion-header>
 
-<ion-content>       <i>padding</i>
+<ion-content>
+    <ion-icon name="funnel" [style.color]="hasFilter ? 'blue' : 'inherit'"></ion-icon>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-list>
-      <ion-item *ngFor="let feed of feeds" (click)="itemSelected(feed.data.url)">
-       <ion-thumbnail item-left>
-          <img [src]="feed.data.thumbnail">
-       </ion-thumbnail>
-       <h2>{{feed.data.title}}</h2>
-       <p>{{feed.data.domain}}</p>
+    <ion-item *ngFor="let feed of feeds" (click)="itemSelected(feed.data.url)">
+      <ion-thumbnail item-left>
+        <img [src]="feed.data.thumbnail">
+      </ion-thumbnail>
+      <h2>{{feed.data.title}}</h2>
+      <p>{{feed.data.domain}}</p>
     </ion-item>
- </ion-list> 
- 
- 
-<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content
-       loadingText="Loading more data...">
+  </ion-list>
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingText="Loading more data...">
     </ion-infinite-scroll-content>
- </ion-infinite-scroll> 
+  </ion-infinite-scroll>
+
+
+
 </ion-content>
