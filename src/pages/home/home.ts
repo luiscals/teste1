@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, ActionSheet, ActionSheetController } from 'ionic-angular';
+import { NavController, LoadingController, ActionSheet, ActionSheetController} from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -10,7 +10,6 @@ import 'rxjs/add/operator/map';
 export class HomePage {
   
   public feeds: Array<string>;
-  public data:string;
   private olderPosts: string = "https://www.reddit.com/new.json?after=";
   private newerPosts: string = "https://www.reddit.com/new.json?before=";
   private url: string = "https://www.reddit.com/new.json";  
@@ -31,6 +30,12 @@ export class HomePage {
   itemSelected (parament){
    
      
+  }
+  filterItems() {
+    this.hasFilter = false;
+    this.feeds = this.noFilter.filter((item) => {
+        return item.data.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1;
+    });
   }
 
   fetchContent ():void {
