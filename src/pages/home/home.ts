@@ -11,14 +11,13 @@ import { DetalhePage } from '../detalhe/detalhe';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  
   public feeds: Array<string>;
   private olderPosts: string = "https://www.reddit.com/new.json?after=";
   private newerPosts: string = "https://www.reddit.com/new.json?before=";
   private url: string = "https://www.reddit.com/new.json";
   public noFilter: Array<any>;
   public hasFilter: boolean = false;
-
 
   constructor(
     public navCtrl: NavController,
@@ -34,7 +33,7 @@ export class HomePage {
 
   functionmodal(conteudo) {
     console.log(conteudo);
-    let profileModal = this.modalCtrl.create(DetalhePage,{conteudo:11515523});
+    let profileModal = this.modalCtrl.create(DetalhePage,{conteudo:123});
     profileModal.present();
   }
 
