@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { NavParams } from 'ionic-angular';
 import { DetalhePage } from '../detalhe/detalhe';
+import { DetalheFiltroPage } from '../detalhe-filtro/detalhe-filtro';
 
 
 @Component({
@@ -35,6 +36,12 @@ export class HomePage {
     console.log(conteudo);
     let profileModal = this.modalCtrl.create(DetalhePage,{conteudo:123});
     profileModal.present();
+  }
+  functionfiltro(miolo) {
+    console.log(miolo);
+    let profileModal = this.modalCtrl.create(DetalheFiltroPage,{miolo:124});
+    profileModal.present();
+    
   }
 
   itemSelected(parament) {

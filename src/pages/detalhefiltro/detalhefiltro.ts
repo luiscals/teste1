@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { detachEmbeddedView } from '@angular/core/src/view';
 
 /**
- * Generated class for the DetalhePage page.
+ * Generated class for the DetalhefiltroPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +10,16 @@ import { detachEmbeddedView } from '@angular/core/src/view';
 
 @IonicPage()
 @Component({
-  selector: 'page-detalhe',
-  templateUrl: 'detalhe.html',
+  selector: 'page-detalhefiltro',
+  templateUrl: 'detalhefiltro.html',
 })
-export class DetalhePage {
-  cont;
+export class DetalhefiltroPage {
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.cont = this.navParams.get('conteudo');
-    console.log('conteudo');
- }
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetalhePage');
+    console.log('ionViewDidLoad DetalhefiltroPage');
   }
 
 }

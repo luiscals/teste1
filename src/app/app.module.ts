@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RedditServiceProvider } from '../providers/reddit-service/reddit-service';
 import { DetalhePage } from '../pages/detalhe/detalhe';
+import {DetalheFiltroPage} from '../pages/detalhe-filtro/detalhe-filtro';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { DetalhePage } from '../pages/detalhe/detalhe';
     MyApp,
     HomePage,
     DetalhePage,
+    DetalheFiltroPage,
   ],
   imports: [
     BrowserModule, HttpModule,
@@ -27,6 +29,7 @@ import { DetalhePage } from '../pages/detalhe/detalhe';
     MyApp,
     HomePage, 
     DetalhePage,
+    DetalheFiltroPage,
   ],
   providers: [
     StatusBar,
